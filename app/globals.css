@@ -13,6 +13,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-divider: var(--divider);
+  --color-muted-foreground: rgb(0 0 0 / 50%);
 
   --font-sans: var(--font-sf-pro-display);
   --font-pixel: var(--font-geist-pixel);
