@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { ImageHover } from "../image-hover";
 import {
   aboutCarouselImages,
   type AboutCarouselImage,
@@ -59,6 +60,7 @@ function FoldCard({ image }: FoldCardProps) {
     [0, 0.25, 0.75, 1],
     [18, 0, 0, -14],
   );
+
   const topY = useTransform(
     scrollYProgress,
     [0, 0.25, 0.75, 1],
@@ -70,6 +72,7 @@ function FoldCard({ image }: FoldCardProps) {
     [0, 0.25, 0.75, 1],
     [-18, 0, 0, 14],
   );
+
   const bottomY = useTransform(
     scrollYProgress,
     [0, 0.25, 0.75, 1],
@@ -83,6 +86,10 @@ function FoldCard({ image }: FoldCardProps) {
       className={`relative w-full ${
         image.featured ? "aspect-[320/430]" : "aspect-[320/383]"
       }`}
+      data-cursor-label={image.cursorLabel}
+      data-hover-image=""
+      data-hover-shader={image.cursorLabel ? undefined : ""}
+      data-hover-src={image.src}
       role={image.alt ? "img" : undefined}
       style={{
         perspective: 900,
@@ -90,6 +97,7 @@ function FoldCard({ image }: FoldCardProps) {
       }}
     >
       <motion.div
+        data-hover-media=""
         className="absolute inset-x-0 top-0 h-[calc(50%+1px)] origin-bottom overflow-hidden [backface-visibility:hidden] will-change-transform"
         style={{
           rotateX: shouldReduceMotion ? 0 : topRotateX,
@@ -101,6 +109,7 @@ function FoldCard({ image }: FoldCardProps) {
       </motion.div>
 
       <motion.div
+        data-hover-media=""
         className="absolute inset-x-0 top-1/2 h-1/2 origin-top overflow-hidden [backface-visibility:hidden] will-change-transform"
         style={{
           rotateX: shouldReduceMotion ? 0 : bottomRotateX,
@@ -126,9 +135,11 @@ export function AboutCarousel() {
       </h2>
 
       <div className="flex flex-col gap-[31px]">
-        {aboutCarouselImages.map((image) => (
-          <FoldCard key={image.src} image={image} />
-        ))}
+        <ImageHover>
+          {aboutCarouselImages.map((image) => (
+            <FoldCard key={image.src} image={image} />
+          ))}
+        </ImageHover>
       </div>
     </section>
   );

@@ -49,3 +49,14 @@
     color: var(--foreground);
   }
 }
+
+[data-hover-image][data-hover-active="true"] [data-hover-media] {
+  visibility: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-image-hover-enabled="true"]
+    [data-hover-image]:not([data-hover-failed="true"]) {
+    cursor: none;
+  }
+}
