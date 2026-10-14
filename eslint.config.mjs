@@ -13,6 +13,11 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      "object-curly-newline": ["error", { ImportDeclaration: "never" }],
+    },
+  },
 ]);
 
 export default eslintConfig;

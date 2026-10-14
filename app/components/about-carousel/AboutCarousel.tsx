@@ -1,18 +1,14 @@
 "use client";
 
-import {
-  motion,
+import {motion,
   useReducedMotion,
   useScroll,
-  useTransform,
-} from "framer-motion";
+  useTransform,} from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import { ImageHover } from "../image-hover";
-import {
-  aboutCarouselImages,
-  type AboutCarouselImage,
-} from "./about-carousel.images";
+import {aboutCarouselImages,
+  type AboutCarouselImage,} from "./about-carousel.images";
 
 type FoldCardProps = {
   image: AboutCarouselImage;

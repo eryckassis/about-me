@@ -1,11 +1,9 @@
 "use client";
 
-import {
-  motion,
+import {motion,
   useMotionValueEvent,
   useReducedMotion,
-  useScroll,
-} from "framer-motion";
+  useScroll,} from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 
 const wordmarkClassName =

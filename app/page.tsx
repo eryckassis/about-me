@@ -1,10 +1,8 @@
-import {
-  AboutCarousel,
+import {AboutCarousel,
   AboutIntro,
   BrandMark,
   CenterWordmark,
-  LocaleClock,
-} from "./components";
+  LocaleClock,} from "./components";
 
 export default function Home() {
   return (

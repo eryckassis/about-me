@@ -2,13 +2,11 @@
 
 import { motion, useMotionValue, useReducedMotion } from "framer-motion";
 import { Geometry, Mesh, Program, Renderer, Texture, Vec2 } from "ogl";
-import {
-  useEffect,
+import {useEffect,
   useRef,
   useState,
   type PointerEvent as ReactPointerEvent,
-  type ReactNode,
-} from "react";
+  type ReactNode,} from "react";
 
 type ImageHoverProps = {
   children: ReactNode;
