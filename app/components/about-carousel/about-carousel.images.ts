@@ -24,7 +24,6 @@ export const aboutCarouselImages: readonly AboutCarouselImage[] = [
   {
     src: "/images/about-carousel/03.webp",
     alt: "Espartaco Degano",
-    cursorLabel: "Espartaco Degano",
     width: 600,
     height: 600,
   },
@@ -37,7 +36,6 @@ export const aboutCarouselImages: readonly AboutCarouselImage[] = [
   {
     src: "/images/about-carousel/05.webp",
     alt: "Fernanda Nessier",
-    cursorLabel: "Fernanda Nessier",
     width: 800,
     height: 1199,
   },
@@ -50,7 +48,6 @@ export const aboutCarouselImages: readonly AboutCarouselImage[] = [
   {
     src: "/images/about-carousel/07.webp",
     alt: "Juan Mantz",
-    cursorLabel: "Juan Mantz",
     width: 3000,
     height: 3000,
   },
@@ -69,7 +66,6 @@ export const aboutCarouselImages: readonly AboutCarouselImage[] = [
   {
     src: "/images/about-carousel/10.webp",
     alt: "Camila Cappato",
-    cursorLabel: "Camila Cappato",
     width: 720,
     height: 960,
   },
@@ -82,7 +78,6 @@ export const aboutCarouselImages: readonly AboutCarouselImage[] = [
   {
     src: "/images/about-carousel/12.webp",
     alt: "Giuliano Barbotti",
-    cursorLabel: "Giuliano Barbotti",
     width: 720,
     height: 960,
   },
