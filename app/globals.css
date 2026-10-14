@@ -6,7 +6,9 @@
   --divider: rgb(20 20 20 / 16%);
 
   --layout-page-margin: 1.25rem;
-  --layout-grid-gutter: 1.25rem;
+  --layout-chrome-edge: 1rem;
+  --layout-grid-gutter: 0.9375rem;
+  --layout-mobile-content: 20rem;
 }
 
 @theme inline {
@@ -19,12 +21,15 @@
   --font-pixel: var(--font-geist-pixel);
 
   --spacing-page: var(--layout-page-margin);
+  --spacing-chrome-edge: var(--layout-chrome-edge);
   --spacing-grid-gutter: var(--layout-grid-gutter);
 }
 
 @media (min-width: 80rem) {
   :root {
     --layout-page-margin: 2rem;
+    --layout-chrome-edge: 2rem;
+    --layout-grid-gutter: 1.25rem;
   }
 }
 

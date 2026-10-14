@@ -1,0 +1,1 @@
+export { CenterWordmark } from "./CenterWordmark";

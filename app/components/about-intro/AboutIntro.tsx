@@ -31,7 +31,7 @@ export function AboutIntro() {
         About Estudio Bang
       </h1>
 
-      <div className="space-y-[22.4px] text-[14px] leading-[22.4px] tracking-[-0.02em]">
+      <div className="space-y-[18.9px] text-justify text-[14px] leading-[18.9px] tracking-[-0.02em] xl:space-y-[22.4px] xl:text-left xl:leading-[22.4px]">
         <p>
           We are a Barcelona-based architecture team with more than fifteen
           years of experience across architecture, interiors, and product
