@@ -6,3 +6,4 @@ export { GrainLayer } from "./grain-layer";
 export { getTimeInTimeZone, LocaleClock } from "./locale-clock";
 export { SmoothScroll } from "./smooth-scroll";
 export { ImageHover } from "./image-hover";
+export { Preloader } from "./preloader";

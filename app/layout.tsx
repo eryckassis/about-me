@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { GrainLayer, SmoothScroll } from "./components";
+import { GrainLayer, Preloader, SmoothScroll } from "./components";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -39,7 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sfProDisplay.variable} ${geistPixel.variable}`}
     >
       <body className="min-h-screen font-sans antialiased">
+        <Preloader />
+
         <SmoothScroll>{children}</SmoothScroll>
+
         <GrainLayer />
       </body>
     </html>
