@@ -4,7 +4,7 @@ export { AboutIntro } from "./about-intro";
 export { BrandMark } from "./brand-mark";
 export { CenterWordmark } from "./center-wordmark";
 export { GrainLayer } from "./grain-layer";
-export { HomeExperience } from "./home-experience";
+export { HomeExperience, HomePreloaderProvider } from "./home-experience";
 export { HomeFooter } from "./home-footer";
 export { HomeMosaic } from "./home-mosaic";
 export { getTimeInTimeZone, LocaleClock } from "./locale-clock";

@@ -1,1 +1,5 @@
-export { HomeExperience, useHomeReady } from "./HomeExperience";
+export {
+  HomeExperience,
+  HomePreloaderProvider,
+  useHomeReady,
+} from "./HomeExperience";
