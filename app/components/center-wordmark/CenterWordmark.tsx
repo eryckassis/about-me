@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useHomeReady } from "../home-experience";
 
 const wordmarkClassName =
   "pointer-events-none fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-transparent font-medium text-[clamp(2.625rem,12vw,4.5rem)] leading-[76px] tracking-[-0.04em] min-[981px]:text-[clamp(3rem,5.14vw,4.625rem)]";
@@ -9,16 +10,19 @@ const wordmarkClassName =
 const motionEase = [0.65, 0, 0.35, 1] as const;
 
 export function CenterWordmark() {
-  const [isVisible, setIsVisible] = useState(false);
+  const homeReady = useHomeReady();
+  const [isMounted, setIsMounted] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const initialFrame = window.requestAnimationFrame(() => {
-      setIsVisible(true);
+      setIsMounted(true);
     });
 
     return () => window.cancelAnimationFrame(initialFrame);
   }, []);
+
+  const isVisible = homeReady ?? isMounted;
 
   const animation = {
     filter: isVisible || shouldReduceMotion ? "blur(0px)" : "blur(8px)",

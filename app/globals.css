@@ -50,6 +50,22 @@
   }
 }
 
+html.home-scrollbar-hidden,
+html.home-scrollbar-hidden body {
+  scrollbar-width: none;
+}
+
+html.home-scrollbar-hidden::-webkit-scrollbar,
+html.home-scrollbar-hidden body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+[data-fold-image][data-fold-active="true"] [data-fold-media] {
+  visibility: hidden;
+}
+
 [data-hover-image][data-hover-active="true"] [data-hover-media] {
   visibility: hidden;
 }

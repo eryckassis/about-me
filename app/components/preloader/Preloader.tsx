@@ -7,6 +7,10 @@ import { BrandMark } from "../brand-mark";
 
 type PreloaderPhase = "loading" | "burst" | "done";
 
+type PreloaderProps = {
+  onComplete?: () => void;
+};
+
 type BurstTile = {
   rotate: number;
   x: string;
@@ -51,7 +55,7 @@ function preloadImage(image: AboutCarouselImage, onSettled: () => void) {
   });
 }
 
-export function Preloader() {
+export function Preloader({ onComplete }: PreloaderProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const [phase, setPhase] = useState<PreloaderPhase>("loading");
@@ -154,6 +158,12 @@ export function Preloader() {
       }
     };
   }, [shouldReduceMotion]);
+
+  useEffect(() => {
+    if (phase === "done") {
+      onComplete?.();
+    }
+  }, [onComplete, phase]);
 
   if (!isVisible) {
     return null;

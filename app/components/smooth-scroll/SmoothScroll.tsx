@@ -22,7 +22,11 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
   }, []);
 
   return (
-    <ReactLenis ref={lenisRef} root options={{ autoRaf: false }}>
+    <ReactLenis
+      ref={lenisRef}
+      root
+      options={{ autoRaf: false, infinite: true, syncTouch: true }}
+    >
       {children}
     </ReactLenis>
   );

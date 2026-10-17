@@ -1,14 +1,20 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
 import type { AboutCarouselImage } from "../about-carousel";
+import { FoldImage } from "../fold-image";
 import type { HomeMosaicItem } from "./home-mosaic.items";
 
 type HomeMosaicCardProps = {
   image: AboutCarouselImage;
+  isReady: boolean;
   item: HomeMosaicItem;
+  itemIndex: number;
 };
+
+const ENTER_DURATION_SECONDS = 1.12;
+const ENTER_STAGGER_SECONDS = 0.028;
+const ENTER_STAGGER_SLOTS = 13;
 
 function getMobileLeft(start: number) {
   const columnOffset = start - 1;
@@ -20,7 +26,22 @@ function getMobileWidth(columns: number) {
   return `calc(${columns * 12.5}vw - ${columns * 2.125 + 15}px)`;
 }
 
-export function HomeMosaicCard({ image, item }: HomeMosaicCardProps) {
+function getEntranceDelay(itemIndex: number) {
+  const slot = itemIndex % ENTER_STAGGER_SLOTS;
+  const staggerIndex =
+    slot % 2 === 0
+      ? slot / 2
+      : Math.ceil(ENTER_STAGGER_SLOTS / 2) + (slot - 1) / 2;
+
+  return staggerIndex * ENTER_STAGGER_SECONDS;
+}
+
+export function HomeMosaicCard({
+  image,
+  isReady,
+  item,
+  itemIndex,
+}: HomeMosaicCardProps) {
   const shouldReduceMotion = useReducedMotion();
 
   function renderCard(variant: "desktop" | "mobile") {
@@ -29,15 +50,17 @@ export function HomeMosaicCard({ image, item }: HomeMosaicCardProps) {
 
     return (
       <motion.figure
-        animate={{ opacity: 1, scale: 1 }}
+        animate={{ y: isReady ? 0 : "-100vh" }}
         className={`home-mosaic-card absolute z-[5] m-0 overflow-hidden bg-[#efefed] will-change-transform ${
           isMobile ? "min-[641px]:hidden" : "hidden min-[641px]:block"
         }`}
         data-cursor-label={item.title}
+        data-fold-image=""
+        data-fold-src={image.src}
         data-hover-image=""
         data-hover-shader=""
         data-hover-src={image.src}
-        initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.985 }}
+        initial={false}
         style={
           isMobile
             ? {
@@ -53,16 +76,15 @@ export function HomeMosaicCard({ image, item }: HomeMosaicCardProps) {
                 width: "100%",
               }
         }
-        transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
+        transition={{
+          delay: isReady && !shouldReduceMotion ? getEntranceDelay(itemIndex) : 0,
+          duration: shouldReduceMotion ? 0 : ENTER_DURATION_SECONDS,
+          ease: [0.65, 0, 0.35, 1],
+        }}
       >
-        <Image
-          alt=""
-          className="object-cover"
-          data-hover-media=""
-          draggable={false}
-          fill
+        <FoldImage
+          image={image}
           sizes="(max-width: 640px) 75vw, (max-width: 1279px) 38vw, 35vw"
-          src={image.src}
         />
 
         <figcaption className="sr-only">{item.title}</figcaption>
