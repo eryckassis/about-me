@@ -1,0 +1,2 @@
+export { HomeMosaic } from "./HomeMosaic";
+

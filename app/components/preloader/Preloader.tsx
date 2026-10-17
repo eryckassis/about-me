@@ -2,10 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import {
-  aboutCarouselImages,
-  type AboutCarouselImage,
-} from "../about-carousel";
+import { aboutCarouselImages, type AboutCarouselImage } from "../about-carousel";
 import { BrandMark } from "../brand-mark";
 
 type PreloaderPhase = "loading" | "burst" | "done";
@@ -59,7 +56,7 @@ export function Preloader() {
 
   const [phase, setPhase] = useState<PreloaderPhase>("loading");
 
-  const [progress, setProgress] = useState(0);
+  const [, setProgress] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const isVisible = phase !== "done";

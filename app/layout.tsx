@@ -28,8 +28,8 @@ const geistPixel = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "About | Estudio Bang",
-  description: "About Estudio Bang and its architecture team.",
+  title: "Estudio Bang",
+  description: "Architecture, objects, and research by Estudio Bang.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
