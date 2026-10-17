@@ -9,32 +9,32 @@ export type AboutCarouselImage = {
 
 export const aboutCarouselImages: readonly AboutCarouselImage[] = [
   {
-    src: "/images/about-carousel/01.webp",
+    src: "/images/about-carousel/images-02.jpg",
     alt: "",
     width: 768,
     height: 960,
     featured: true,
   },
   {
-    src: "/images/about-carousel/02.webp",
+    src: "/images/about-carousel/image-03.jpg",
     alt: "",
     width: 720,
     height: 960,
   },
   {
-    src: "/images/about-carousel/03.webp",
+    src: "/images/about-carousel/image.jpg",
     alt: "Espartaco Degano",
     width: 600,
     height: 600,
   },
   {
-    src: "/images/about-carousel/04.webp",
+    src: "/images/about-carousel/image-04.jpg",
     alt: "",
     width: 960,
     height: 720,
   },
   {
-    src: "/images/about-carousel/05.webp",
+    src: "/images/about-carousel/image-05.jpg",
     alt: "Fernanda Nessier",
     width: 800,
     height: 1199,

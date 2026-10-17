@@ -50,13 +50,13 @@ export function CenterWordmark() {
           estudio
         </motion.span>{" "}
         <span aria-hidden="true" className="invisible">
-          bang
+          nord
         </span>
       </p>
 
       <p
         aria-hidden="true"
-        className={`${wordmarkClassName} z-[39] text-background mix-blend-difference`}
+        className={`${wordmarkClassName} z-39 text-background mix-blend-difference`}
       >
         <span className="invisible">estudio</span>{" "}
         <motion.strong
@@ -65,7 +65,7 @@ export function CenterWordmark() {
           initial={false}
           transition={getTransition(0.08)}
         >
-          bang
+          nord
         </motion.strong>
       </p>
     </>
