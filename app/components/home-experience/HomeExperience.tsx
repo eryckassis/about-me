@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 import { usePathname } from "next/navigation";
 import { Preloader } from "../preloader";
 import { SmoothScroll } from "../smooth-scroll";
@@ -43,5 +50,5 @@ export function HomeExperience({ children }: HomeExperienceProps) {
     };
   }, []);
 
-  return <SmoothScroll>{children}</SmoothScroll>;
+  return <SmoothScroll infinite>{children}</SmoothScroll>;
 }

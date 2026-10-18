@@ -25,7 +25,7 @@ export function AboutIntro() {
   return (
     <section
       aria-labelledby="about-title"
-      className="mt-14.75 font-medium xl:col-span-2 xl:col-start-1"
+      className="mt-14.75 w-full max-w-[320px] font-medium text-black xl:col-span-2 xl:col-start-1"
     >
       <h1 id="about-title" className="sr-only">
         About Estudio Bang
@@ -49,20 +49,20 @@ export function AboutIntro() {
         </p>
       </div>
 
-      <div className="mt-6 border-t border-divider pt-6">
+      <div className="mt-6 border-t border-[rgba(0,0,0,0.16)] pt-6">
         <h2 className="sr-only">Team</h2>
 
         <ul className="space-y-2">
           {team.map((member) => (
             <li
               key={member.name}
-              className="flex items-baseline justify-between gap-4"
+              className="flex items-center justify-between gap-4"
             >
               <span className="text-[14px] leading-[22.4px] tracking-[-0.02em]">
                 {member.name}
               </span>
 
-              <span className="shrink-0 text-right text-[12px] leading-[19.2px] tracking-[-0.02em] text-muted-foreground uppercase">
+              <span className="shrink-0 text-left text-[12px] leading-[19.2px] font-semibold tracking-[-0.02em] text-black uppercase">
                 {member.role}
               </span>
             </li>

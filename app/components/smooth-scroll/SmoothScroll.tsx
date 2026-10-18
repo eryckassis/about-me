@@ -6,9 +6,13 @@ import { type ReactNode, useEffect, useRef } from "react";
 
 type SmoothScrollProps = {
   children: ReactNode;
+  infinite?: boolean;
 };
 
-export function SmoothScroll({ children }: SmoothScrollProps) {
+export function SmoothScroll({
+  children,
+  infinite = false,
+}: SmoothScrollProps) {
   const lenisRef = useRef<LenisRef>(null);
 
   useEffect(() => {
@@ -25,7 +29,7 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
     <ReactLenis
       ref={lenisRef}
       root
-      options={{ autoRaf: false, infinite: true, syncTouch: true }}
+      options={{ autoRaf: false, infinite, syncTouch: true }}
     >
       {children}
     </ReactLenis>
