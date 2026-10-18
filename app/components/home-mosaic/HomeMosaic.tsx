@@ -6,7 +6,6 @@ import { ImageHover } from "../image-hover";
 import { HomeMosaicCard } from "./HomeMosaicCard";
 import { homeMosaicItems } from "./home-mosaic.items";
 
-const LOOP_HEIGHT_IN_VIEWPORTS = 416;
 const LOOP_COUNT = 2;
 
 export function HomeMosaic() {
@@ -16,7 +15,7 @@ export function HomeMosaic() {
     <section
       id="home-mosaic"
       aria-labelledby="home-mosaic-title"
-      className="relative h-[516vh] overflow-clip"
+      className="relative h-[516vh] overflow-clip min-[641px]:h-[calc(max(424vh,_245.92vw)_+_100vh)]"
     >
       <h1 id="home-mosaic-title" className="sr-only">
         Selected work by Estudio Bang
@@ -29,8 +28,11 @@ export function HomeMosaic() {
               key={loopIndex}
               id={loopIndex === 0 ? "home-loop-start" : undefined}
               aria-hidden={loopIndex !== 0}
-              className="home-mosaic-cycle absolute inset-x-0 h-[416vh] min-[981px]:inset-x-8 min-[981px]:grid min-[981px]:grid-cols-16 min-[981px]:gap-x-8"
-              style={{ top: `${loopIndex * LOOP_HEIGHT_IN_VIEWPORTS}vh` }}
+              className={`home-mosaic-cycle absolute inset-x-0 h-[416vh] min-[641px]:h-[max(424vh,_245.92vw)] min-[981px]:inset-x-8 min-[981px]:grid min-[981px]:grid-cols-16 min-[981px]:gap-x-8 ${
+                loopIndex === 0
+                  ? "top-0"
+                  : "top-[416vh] min-[641px]:top-[max(424vh,_245.92vw)]"
+              }`}
             >
               {homeMosaicItems.map((item, itemIndex) => {
                 const image = item.image;
