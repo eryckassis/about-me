@@ -1,5 +1,3 @@
-// app/components/header/Header.tsx
-
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -11,7 +9,7 @@ import { BrandMark } from "../brand-mark";
 const navigationItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Projects", href: null },
+  { label: "Projects", href: "/projects" },
   { label: "Objects", href: null },
   { label: "Contact", href: null },
   { label: "Careers", href: null },
@@ -87,7 +85,7 @@ export function Header() {
 
   function handleNavigation(
     event: MouseEvent<HTMLAnchorElement>,
-    href: "/" | "/about",
+    href: "/" | "/about" | "projects",
   ) {
     setIsMenuOpen(false);
 

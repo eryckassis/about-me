@@ -62,7 +62,7 @@ export function AboutIntro() {
                 {member.name}
               </span>
 
-              <span className="shrink-0 text-left text-[12px] leading-[19.2px] font-semibold tracking-[-0.02em] text-black uppercase">
+              <span className="shrink-0 text-left text-[12px] leading-[19.2px] font-semibold tracking-[-0.02em] text-black/50 uppercase">
                 {member.role}
               </span>
             </li>

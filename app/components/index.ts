@@ -12,3 +12,4 @@ export { SmoothScroll } from "./smooth-scroll";
 export { ImageHover } from "./image-hover";
 export { Preloader } from "./preloader";
 export { FoldImage, ScrollFold } from "./fold-image";
+export { ProjectsIndex } from "./projects-index";
