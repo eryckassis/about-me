@@ -29,7 +29,7 @@ export function HomeMosaic() {
               key={loopIndex}
               id={loopIndex === 0 ? "home-loop-start" : undefined}
               aria-hidden={loopIndex !== 0}
-              className="home-mosaic-cycle absolute inset-x-0 grid h-[416vh] grid-cols-16 gap-x-grid-gutter min-[641px]:inset-x-page"
+              className="home-mosaic-cycle absolute inset-x-0 h-[416vh] min-[981px]:inset-x-8 min-[981px]:grid min-[981px]:grid-cols-16 min-[981px]:gap-x-8"
               style={{ top: `${loopIndex * LOOP_HEIGHT_IN_VIEWPORTS}vh` }}
             >
               {homeMosaicItems.map((item, itemIndex) => {
@@ -56,4 +56,3 @@ export function HomeMosaic() {
     </section>
   );
 }
-
