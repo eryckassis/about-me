@@ -105,4 +105,16 @@ export const aboutCarouselImages: readonly AboutCarouselImage[] = [
     width: 720,
     height: 960,
   },
+  {
+    src: "/images/about-carousel/image-17.jpg",
+    alt: "Café des Arts",
+    width: 736,
+    height: 1104,
+  },
+  {
+    src: "/images/about-carousel/image-18.jpg",
+    alt: "",
+    width: 960,
+    height: 960,
+  },
 ];

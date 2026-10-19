@@ -1,23 +1,23 @@
 const team = [
   {
-    name: "Espartaco Degano",
-    role: "Head Architect",
+    name: "Photography",
+    role: "VISUAL STORYTELLING",
   },
   {
-    name: "Fernanda Nessier",
-    role: "Co-founder",
+    name: "Creative Direction",
+    role: "VISUAL CONCEPTS",
   },
   {
-    name: "Juan Mantz",
-    role: "Creative Director",
+    name: "UI/UX Design",
+    role: "DIGITAL EXPERIENCES",
   },
   {
-    name: "Camila Cappato",
-    role: "Architect & ID",
+    name: "Interaction Design",
+    role: "MOTION & INTERACTION",
   },
   {
-    name: "Giuliano Barbotti",
-    role: "Junior Architect",
+    name: "Software Engineering",
+    role: "CREATIVE TECHNOLOGY",
   },
 ];
 
@@ -33,19 +33,20 @@ export function AboutIntro() {
 
       <div className="space-y-[18.9px] text-justify text-[14px] leading-[18.9px] tracking-[-0.02em] xl:space-y-[22.4px] xl:text-left xl:leading-[22.4px]">
         <p>
-          We are a Barcelona-based architecture team with more than fifteen
-          years of experience across architecture, interiors, and product
-          design.
+          Im a Brazil-based creative professional working at the intersection of
+          photography, digital design, and visual storytelling.
         </p>
 
         <p>
-          We have worked alongside teams and professionals in Argentina, Spain,
-          Australia, the United States, and the Middle East.
+          With a background in software engineering, interaction design, and
+          luxury digital experiences, I bring a unique perspective to visual
+          composition, attention to detail, and creative expression.
         </p>
 
         <p>
-          Our projects combine a clear point of view, artistic sensitivity, and
-          technical knowledge to shape spaces and objects that tell stories.
+          My work explores the interplay of light, form, and emotion—blending
+          artistic sensitivity with technical expertise to craft visual
+          narratives that resonate.
         </p>
       </div>
 

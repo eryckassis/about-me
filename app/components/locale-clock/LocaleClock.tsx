@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-type Language = "ENG" | "ESP";
+type Language = "ENG";
 
-const languages: Language[] = ["ENG", "ESP"];
+const languages: Language[] = ["ENG"];
 
 const clocks = [
   {
@@ -13,8 +13,8 @@ const clocks = [
     timeZone: "Europe/Madrid",
   },
   {
-    city: "BUE",
-    label: "Buenos Aires",
+    city: "BR",
+    label: "Brazil",
     timeZone: "America/Argentina/Buenos_Aires",
   },
 ];
