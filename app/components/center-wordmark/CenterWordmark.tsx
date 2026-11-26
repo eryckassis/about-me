@@ -77,7 +77,7 @@ export function CenterWordmark() {
   return (
     <>
       <p
-        aria-label="Estudio Nord"
+        aria-label="Estudio Oassis"
         className={`${wordmarkClassName} z-[1]`}
         style={{ opacity: isVisible ? 1 : 0 }}
       >
@@ -93,7 +93,7 @@ export function CenterWordmark() {
           estudio
         </motion.span>{" "}
         <span aria-hidden="true" className="invisible">
-          nord
+          oassis
         </span>
       </p>
 
@@ -111,7 +111,7 @@ export function CenterWordmark() {
           transition={transition}
           variants={wordVariants}
         >
-          nord
+          oassis
         </motion.strong>
       </p>
     </>
