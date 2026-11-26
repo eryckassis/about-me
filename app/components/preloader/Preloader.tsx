@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";

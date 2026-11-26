@@ -10,6 +10,7 @@ const navigationItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
+  { label: "Designs", href: "/designs" },
 ] as const;
 
 const motionEase = [0.65, 0, 0.35, 1] as const;
@@ -82,7 +83,7 @@ export function Header() {
 
   function handleNavigation(
     event: MouseEvent<HTMLAnchorElement>,
-    href: "/" | "/about" | "/projects",
+    href: (typeof navigationItems)[number]["href"],
   ) {
     setIsMenuOpen(false);
 

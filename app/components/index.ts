@@ -13,3 +13,4 @@ export { ImageHover } from "./image-hover";
 export { Preloader } from "./preloader";
 export { FoldImage, ScrollFold } from "./fold-image";
 export { ProjectsIndex } from "./projects-index";
+export { DesignsIndex } from "./designs-index";
