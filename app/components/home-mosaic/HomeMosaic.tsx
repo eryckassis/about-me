@@ -22,7 +22,7 @@ export function HomeMosaic() {
       }}
     >
       <h1 id="home-mosaic-title" className="sr-only">
-        Selected work by Estudio Bang
+        Selected work by Estudio Oassis
       </h1>
 
       <ImageHover>

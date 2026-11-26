@@ -1,14 +1,18 @@
 "use client";
 
-import {motion,
+import {
+  motion,
   useReducedMotion,
   useScroll,
-  useTransform,} from "framer-motion";
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import { ImageHover } from "../image-hover";
-import {aboutCarouselImages,
-  type AboutCarouselImage,} from "./about-carousel.images";
+import {
+  aboutCarouselImages,
+  type AboutCarouselImage,
+} from "./about-carousel.images";
 
 type FoldCardProps = {
   image: AboutCarouselImage;
@@ -127,7 +131,7 @@ export function AboutCarousel() {
       className="relative z-[8] mx-auto mt-[31px] w-full max-w-[var(--layout-mobile-content)] xl:col-span-2 xl:col-start-4 xl:row-start-1 xl:mx-0 xl:mt-[56vh] xl:max-w-none"
     >
       <h2 id="about-gallery-title" className="sr-only">
-        Estudio Bang gallery
+        Estudio Oassis gallery
       </h2>
 
       <div className="flex flex-col gap-[31px]">

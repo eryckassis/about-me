@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import type { Metadata } from "next";
 import {
   AboutCarousel,
@@ -9,7 +10,7 @@ import {
 } from "../components";
 
 export const metadata: Metadata = {
-  title: "About | Estudio Bang",
+  title: "About | Estudio Oassis",
   description: "About Estudio Bang and its architecture team.",
 };
 

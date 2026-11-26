@@ -9,7 +9,7 @@ import {
 } from "../components";
 
 export const metadata: Metadata = {
-  title: "Designs | Estudio Bang",
+  title: "Designs | Estudio Oassis",
   description: "Selected visual identities, digital and editorial designs.",
 };
 

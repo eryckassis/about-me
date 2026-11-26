@@ -8,7 +8,7 @@ import {
 } from "../components";
 
 export const metadata: Metadata = {
-  title: "Projects | Estudio Bang",
+  title: "Projects | Estudio Oassis",
   description: "Selected architecture, landscape, and design projects.",
 };
 

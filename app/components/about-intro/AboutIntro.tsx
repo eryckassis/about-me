@@ -28,7 +28,7 @@ export function AboutIntro() {
       className="mt-14.75 w-full max-w-[320px] font-medium text-black xl:col-span-2 xl:col-start-1"
     >
       <h1 id="about-title" className="sr-only">
-        About Estudio Bang
+        About Estudio Oassis
       </h1>
 
       <div className="space-y-[18.9px] text-justify text-[14px] leading-[18.9px] tracking-[-0.02em] xl:space-y-[22.4px] xl:text-left xl:leading-[22.4px]">

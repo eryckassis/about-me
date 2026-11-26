@@ -28,7 +28,7 @@ const geistPixel = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Estudio Bang",
+  title: "Estudio Oassis",
   description: "Architecture, objects, and research by Estudio Bang.",
 };
 
