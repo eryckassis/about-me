@@ -28,7 +28,7 @@ export const designsIndexItems = [
     type: "Web Design",
     client: "Independent",
     year: "2026",
-    src: "/images/about-carousel/image-18.jpg",
+    src: "/images/about-carousel/dior-atelier.png",
     mobileHeight: 296,
   },
   {
@@ -38,7 +38,7 @@ export const designsIndexItems = [
     type: "Editorial",
     client: "Personal Work",
     year: "2026",
-    src: "/images/about-carousel/image-17.jpg",
+    src: "/images/about-carousel/almada-atelier.png",
     mobileHeight: 278,
   },
 ] satisfies readonly DesignIndexItem[];

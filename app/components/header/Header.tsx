@@ -7,10 +7,10 @@ import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { BrandMark } from "../brand-mark";
 
 const navigationItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Designs", href: "/designs" },
+  { label: "Home,", href: "/" },
+  { label: "About,", href: "/about" },
+  { label: "Projects,", href: "/projects" },
+  { label: "Designs,", href: "/designs" },
 ] as const;
 
 const motionEase = [0.65, 0, 0.35, 1] as const;
