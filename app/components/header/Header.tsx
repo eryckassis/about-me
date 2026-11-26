@@ -117,18 +117,6 @@ export function Header() {
             {navigationItems.map((item) => {
               const isActive = item.href === pathname;
 
-              if (!item.href) {
-                return (
-                  <span
-                    key={item.label}
-                    aria-disabled="true"
-                    className="opacity-20"
-                  >
-                    {item.label}
-                  </span>
-                );
-              }
-
               return (
                 <Link
                   key={item.label}
@@ -203,23 +191,17 @@ export function Header() {
                       ease: motionEase,
                     }}
                   >
-                    {item.href ? (
-                      <Link
-                        ref={item.href === "/" ? mobileHomeRef : undefined}
-                        aria-current={isActive ? "page" : undefined}
-                        className={`transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
-                          isActive ? "opacity-100" : "opacity-20"
-                        }`}
-                        href={item.href}
-                        onClick={(event) => handleNavigation(event, item.href)}
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <span aria-disabled="true" className="opacity-20">
-                        {item.label}
-                      </span>
-                    )}
+                    <Link
+                      ref={item.href === "/" ? mobileHomeRef : undefined}
+                      aria-current={isActive ? "page" : undefined}
+                      className={`transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
+                        isActive ? "opacity-100" : "opacity-20"
+                      }`}
+                      href={item.href}
+                      onClick={(event) => handleNavigation(event, item.href)}
+                    >
+                      {item.label}
+                    </Link>
                   </motion.li>
                 );
               })}

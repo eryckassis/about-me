@@ -1,51 +1,94 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useHomeReady } from "../home-experience";
+import {
+  motion,
+  useAnimationControls,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import { useEffect } from "react";
+import { useHomeEntrance } from "../home-experience";
 
-const wordmarkClassName =
-  "pointer-events-none fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-transparent font-medium text-[clamp(2.625rem,12vw,4.5rem)] leading-[76px] tracking-[-0.04em] min-[981px]:text-[clamp(3rem,5.14vw,4.625rem)]";
+const WORD_DURATION_SECONDS = 0.76;
+const WORD_HOLD_MS = 240;
 
 const motionEase = [0.65, 0, 0.35, 1] as const;
 
+const wordmarkClassName =
+  "pointer-events-none fixed top-1/2 left-1/2 m-0 -translate-x-1/2 -translate-y-1/2 overflow-hidden whitespace-nowrap bg-transparent font-medium text-[clamp(2.625rem,12vw,4.5rem)] leading-[76px] tracking-[-0.04em] min-[981px]:text-[clamp(3rem,5.14vw,4.625rem)]";
+
+const wordVariants: Variants = {
+  hidden: (direction: number) => ({
+    y: `${direction * 110}%`,
+  }),
+  visible: {
+    y: "0%",
+  },
+};
+
 export function CenterWordmark() {
-  const homeReady = useHomeReady();
-  const [isMounted, setIsMounted] = useState(false);
+  const entrance = useHomeEntrance();
+  const controls = useAnimationControls();
   const shouldReduceMotion = useReducedMotion();
 
+  const phase = entrance?.phase ?? "cards";
+  const completeWordmark = entrance?.completeWordmark;
+  const isVisible = phase !== "loading";
+
   useEffect(() => {
-    const initialFrame = window.requestAnimationFrame(() => {
-      setIsMounted(true);
-    });
+    if (!isVisible) {
+      return;
+    }
 
-    return () => window.cancelAnimationFrame(initialFrame);
-  }, []);
+    let cancelled = false;
+    let holdTimer: number | undefined;
 
-  const isVisible = homeReady ?? isMounted;
+    async function revealWordmark() {
+      await controls.start("visible");
 
-  const animation = {
-    filter: isVisible || shouldReduceMotion ? "blur(0px)" : "blur(8px)",
-    opacity: isVisible ? 1 : 0,
-    y: isVisible || shouldReduceMotion ? 0 : 18,
-  };
+      if (cancelled) {
+        return;
+      }
 
-  function getTransition(delay: number) {
-    return {
-      delay: isVisible && !shouldReduceMotion ? delay : 0,
-      duration: shouldReduceMotion ? 0 : 0.76,
-      ease: motionEase,
+      holdTimer = window.setTimeout(
+        () => {
+          if (!cancelled) {
+            completeWordmark?.();
+          }
+        },
+        shouldReduceMotion ? 0 : WORD_HOLD_MS,
+      );
+    }
+
+    void revealWordmark();
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(holdTimer);
+      controls.stop();
     };
-  }
+  }, [controls, isVisible, shouldReduceMotion, completeWordmark]);
+
+  const transition = {
+    duration: shouldReduceMotion ? 0 : WORD_DURATION_SECONDS,
+    ease: motionEase,
+  };
 
   return (
     <>
-      <p aria-label="Estudio Bang" className={`${wordmarkClassName} z-[1]`}>
+      <p
+        aria-label="Estudio Nord"
+        className={`${wordmarkClassName} z-[1]`}
+        style={{ opacity: isVisible ? 1 : 0 }}
+      >
         <motion.span
-          animate={animation}
+          aria-hidden="true"
+          animate={controls}
           className="inline-block text-foreground/20"
-          initial={false}
-          transition={getTransition(0)}
+          custom={1}
+          initial="hidden"
+          transition={transition}
+          variants={wordVariants}
         >
           estudio
         </motion.span>{" "}
@@ -57,13 +100,16 @@ export function CenterWordmark() {
       <p
         aria-hidden="true"
         className={`${wordmarkClassName} z-39 text-background mix-blend-difference`}
+        style={{ opacity: isVisible ? 1 : 0 }}
       >
         <span className="invisible">estudio</span>{" "}
         <motion.strong
-          animate={animation}
+          animate={controls}
           className="inline-block font-medium"
-          initial={false}
-          transition={getTransition(0.08)}
+          custom={-1}
+          initial="hidden"
+          transition={transition}
+          variants={wordVariants}
         >
           nord
         </motion.strong>

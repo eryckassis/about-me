@@ -2,7 +2,10 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { aboutCarouselImages, type AboutCarouselImage } from "../about-carousel";
+import {
+  aboutCarouselImages,
+  type AboutCarouselImage,
+} from "../about-carousel";
 import { BrandMark } from "../brand-mark";
 
 type PreloaderPhase = "loading" | "burst" | "done";
@@ -64,25 +67,6 @@ export function Preloader({ onComplete }: PreloaderProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const isVisible = phase !== "done";
-
-  useEffect(() => {
-    if (!isVisible) {
-      return;
-    }
-
-    const previousHtmlOverflow = document.documentElement.style.overflow;
-
-    const previousBodyOverflow = document.body.style.overflow;
-
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.documentElement.style.overflow = previousHtmlOverflow;
-
-      document.body.style.overflow = previousBodyOverflow;
-    };
-  }, [isVisible]);
 
   useEffect(() => {
     const startedAt = Date.now();

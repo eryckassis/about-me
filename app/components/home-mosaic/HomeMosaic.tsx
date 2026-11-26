@@ -16,6 +16,10 @@ export function HomeMosaic() {
       id="home-mosaic"
       aria-labelledby="home-mosaic-title"
       className="relative h-[516vh] overflow-clip min-[641px]:h-[calc(max(424vh,_245.92vw)_+_100vh)]"
+      inert={!isReady}
+      style={{
+        visibility: isReady ? "visible" : "hidden",
+      }}
     >
       <h1 id="home-mosaic-title" className="sr-only">
         Selected work by Estudio Bang
